@@ -278,17 +278,34 @@ ul {
    HERO SECTION
    ========================================= */
 .hero {
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(135deg, #05070f 0%, #1a1e26 100%);
     overflow: hidden;
+    /* Deep radial gradient (Atmospheric background) */
+    background: radial-gradient(circle at 60% 40%, rgba(20, 30, 48, 1) 0%, rgba(5, 7, 15, 1) 100%);
+    padding-top: 80px;
+    /* Add space for navbar */
+    padding-bottom: 40px;
 }
 
-/* Subtle background accent */
+/* Technological abstract patterns (ultra-low opacity) */
 .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Abstract grid-like matrix texture */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Subtle gold background accent glow */
+.hero::after {
     content: '';
     position: absolute;
     top: -20%;
@@ -296,25 +313,33 @@ ul {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-gold-light) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(206, 158, 88, 0.15) 0%, transparent 70%);
     filter: blur(60px);
     z-index: 1;
+    pointer-events: none;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     /* Soft geometric abstract pattern for an 'High Performance' texture */
-    background: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="%23ce9e58" fill-opacity="0.04" fill-rule="evenodd"><path d="M0 40L40 0H20L0 20M40 40V20L20 40"/></g></svg>');
+    background: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="%23ce9e58" fill-opacity="0.03" fill-rule="evenodd"><path d="M0 40L40 0H20L0 20M40 40V20L20 40"/></g></svg>');
     z-index: 2;
     pointer-events: none;
 }
 
-.hero-content {
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
     position: relative;
     z-index: 3;
-    max-width: 800px;
-    padding-top: 80px;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 650px;
 }
 
 .hero-subtitle {
@@ -351,6 +376,95 @@ ul {
 .hero-actions {
     display: flex;
     gap: 1rem;
+}
+
+/* Hero Portrait Styles */
+.hero-portrait {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    position: relative;
+}
+
+.portrait-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    /* CSS Masking for blending effect at the bottom and sides */
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 75%,
+            rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 75%,
+            rgba(0, 0, 0, 0.05) 95%,
+            rgba(0, 0, 0, 0) 100%);
+    /* Adding subtle blend mode to mix with the background texture */
+    mix-blend-mode: luminosity;
+    opacity: 0.95;
+    transition: all 0.8s ease;
+}
+
+.portrait-wrapper:hover {
+    mix-blend-mode: normal;
+    opacity: 1;
+}
+
+.portrait-img {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    /* Prevent it from getting too tall */
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 8px;
+    /* Slight rounding before the fade starts */
+}
+
+/* Hero Responsive */
+@media (max-width: 992px) {
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        padding-top: 120px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    .hero-description {
+        margin: 0 auto 2.5rem auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .portrait-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .portrait-img {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-actions {
+        flex-direction: column;
+    }
 }
 
 /* =========================================
