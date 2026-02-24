@@ -360,15 +360,35 @@ ul {
 }
 
 .service-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
+    /* Glassmorphism Background */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    /* Subtle Glowing Borders */
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: 3rem 2.5rem;
-    transition: all var(--transition-normal);
+
+    /* Smooth 3D Transition */
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+
+    /* Soft Initial Shadow */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Glass Reflection Highlight */
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    opacity: 0.5;
 }
 
 .service-card::before {
@@ -382,13 +402,19 @@ ul {
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-normal);
+    z-index: 2;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--border-gold);
-    background: var(--bg-card-hover);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    /* Lift up effect */
+    transform: translateY(-12px);
+
+    /* Glow borders on hover */
+    border-color: rgba(206, 158, 88, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+
+    /* Deep 3D Shadow */
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 25px rgba(206, 158, 88, 0.1);
 }
 
 .service-card:hover::before {
@@ -398,18 +424,27 @@ ul {
 .service-icon {
     width: 60px;
     height: 60px;
-    background: var(--accent-gold-light);
+
+    /* Glass circle */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.03);
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    color: var(--accent-gold);
+
+    /* Pale Gold Color for Elegance */
+    color: #EDDECA;
 }
 
 .service-icon svg {
     width: 30px;
     height: 30px;
+    /* Thin-line styling */
+    stroke-width: 1;
 }
 
 .service-card h3 {
