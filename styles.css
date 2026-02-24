@@ -415,6 +415,17 @@ ul {
     transition: all 0.8s ease;
 }
 
+.portrait-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Subtle vignette effect focusing on the face */
+    background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.85) 100%);
+    pointer-events: none;
+    border-radius: 8px;
+    z-index: 2;
+}
+
 .portrait-wrapper:hover {
     mix-blend-mode: normal;
     opacity: 1;
@@ -430,6 +441,9 @@ ul {
     display: block;
     border-radius: 8px;
     /* Slight rounding before the fade starts */
+
+    /* Premium Color Grading (Warm cinematic tone) */
+    filter: sepia(0.2) brightness(0.85) contrast(1.1);
 }
 
 /* Hero Responsive */
