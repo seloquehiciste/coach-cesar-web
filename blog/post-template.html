@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Título del Artículo] - Coach César</title>
+    <meta name="description" content="[Breve descripción SEO del artículo]">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Post Specific Styles */
+        .post-header {
+            padding-top: 150px;
+            padding-bottom: 4rem;
+            background: linear-gradient(135deg, #05070f 0%, #1a1e26 100%);
+            border-bottom: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .post-meta-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .post-category {
+            background: var(--accent-gold);
+            color: var(--bg-main);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.2;
+        }
+
+        .post-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .post-content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .post-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #d1d5db;
+            /* Lighter gray for better reading */
+        }
+
+        .post-content h2 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin: 3rem 0 1.5rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+            color: inherit;
+            /* inherit from .post-content */
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 2rem;
+            margin: 2rem 0;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-primary);
+            background: rgba(206, 158, 88, 0.05);
+            padding: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .post-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #1a2235;
+            border-radius: var(--radius-lg);
+            margin: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.2);
+            font-style: italic;
+        }
+
+        .post-footer {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .back-to-blog:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: rgba(206, 158, 88, 0.05);
+            transform: translateX(-5px);
+        }
+
+        .back-to-blog svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navegación Sticky Glassmorphism -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Coach<span>César</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Inicio</a></li>
+                <li><a href="../index.html#services" class="nav-link">Servicios</a></li>
+                <li><a href="../index.html#metodologia" class="nav-link">Metodología AREA</a></li>
+                <li><a href="../index.html#about" class="nav-link">Sobre Mí</a></li>
+                <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container reveal active">
+            <div class="post-meta-top">
+                <span class="post-category">[Categoría]</span>
+                <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        style="vertical-align:-3px; margin-right: 4px;">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg> [DD Mes YYYY]</span>
+                <span>Por <strong>Coach César</strong></span>
+            </div>
+            <h1 class="post-title">[Título Principal del Artículo Extendido Aquí]</h1>
+            <p class="post-subtitle">[Un subtítulo o breve resumen introductorio que enganche al lector antes del
+                contenido principal]</p>
+        </div>
+    </header>
+
+    <!-- Post Content Document -->
+    <main class="post-content-wrapper">
+        <article class="post-content reveal">
+
+            <p><strong>[Párrafo Introductorio]</strong> Aquí comienza el desarrollo de la idea principal. El alto
+                desempeño no es casualidad, es una metodología estructurada que empieza con la acción...</p>
+
+            <div class="post-image-placeholder">
+                [Espacio para Imagen Principal o Gráfico]
+            </div>
+
+            <h2>[Subtítulo Nivel 2: Desarrollo del Tema]</h2>
+            <p>El modelo AREA propone que la evaluación continua es lo que permite afinar la brújula. Muchos líderes
+                caen en la trampa del falso progreso: hacer cosas sin medir su impacto.</p>
+
+            <ul>
+                <li><strong>Primer Punto Clave:</strong> Descripción detallada de este punto estratégico.</li>
+                <li><strong>Segundo Punto Clave:</strong> Implementación práctica en entornos corporativos.</li>
+                <li><strong>Tercer Punto Clave:</strong> Sistemas de medición de resultados tangibles.</li>
+            </ul>
+
+            <blockquote>
+                "El talento sin un sistema de evaluación riguroso es solo energía dispersa. El método AREA canaliza la
+                intención hacia resultados consistentes y escalables."
+            </blockquote>
+
+            <h3>[Subtítulo Nivel 3: Conclusión o Pasos Prácticos]</h3>
+            <p>Para concluir, integra el aprendizaje en el flujo diario de tu equipo. La retrospectiva no debe ser un
+                evento anual, sino un hábito semanal.</p>
+
+        </article>
+
+        <!-- Post Footer with Back Link -->
+        <div class="post-footer reveal">
+            <a href="../blog.html" class="back-to-blog">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Volver al Blog
+            </a>
+
+            <!-- Opcional: Compartir en redes -->
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <span style="font-size:0.9rem; color:var(--text-secondary);">Compartir:</span>
+                <a href="#" style="color:var(--text-primary);"><svg viewBox="0 0 24 24" width="20" height="20"
+                        fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg></a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="../index.html">Coach<span>César</span></a>
+                <p>Excelencia en Alto Desempeño</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#services">Servicios</a>
+                <a href="../index.html#metodologia">Modelo AREA</a>
+                <a href="../index.html#about">Perfil</a>
+                <a href="../blog.html">Blog</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Coach César. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="../script.js"></script>
+</body>
+
+</html>
