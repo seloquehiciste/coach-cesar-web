@@ -479,7 +479,8 @@ ul {
     }
 
     .portrait-img {
-        max-height: 50vh;
+        max-height: 70vh;
+        /* Allowed more height so it doesn't crop the torso too much */
     }
 }
 
