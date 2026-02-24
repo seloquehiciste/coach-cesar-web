@@ -387,7 +387,7 @@ ul {
 .hero-portrait {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 100%;
     position: relative;
 }
@@ -396,6 +396,9 @@ ul {
     position: relative;
     width: 100%;
     max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* CSS Masking for blending effect at the bottom and sides */
     mask-image: linear-gradient(to bottom,
             rgba(0, 0, 0, 1) 0%,
@@ -423,7 +426,7 @@ ul {
     max-height: 85vh;
     /* Prevent it from getting too tall */
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
     display: block;
     border-radius: 8px;
     /* Slight rounding before the fade starts */
