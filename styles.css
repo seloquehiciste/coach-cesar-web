@@ -280,14 +280,14 @@ ul {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    /* Remover align-items: center para evitar clipping top */
     position: relative;
     overflow: hidden;
     /* Deep radial gradient (Atmospheric background) */
     background: radial-gradient(circle at 60% 40%, rgba(20, 30, 48, 1) 0%, rgba(5, 7, 15, 1) 100%);
-    padding-top: 80px;
-    /* Add space for navbar */
-    padding-bottom: 40px;
+    padding-top: 140px;
+    /* Add space for navbar safely */
+    padding-bottom: 20px;
 }
 
 /* Technological abstract patterns (ultra-low opacity) */
@@ -336,10 +336,15 @@ ul {
     position: relative;
     z-index: 3;
     width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .hero-content {
     max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-subtitle {
