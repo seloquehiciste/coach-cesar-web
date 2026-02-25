@@ -612,34 +612,82 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+    position: relative;
+    /* For connecting line */
+}
+
+/* Subtle curved connection line running behind the cards */
+.area-grid::before {
+    content: '';
+    position: absolute;
+    top: 35%;
+    /* Adjust to run behind the letters */
+    left: 5%;
+    right: 5%;
+    height: 60px;
+    border-top: 2px dashed rgba(206, 158, 88, 0.2);
+    border-radius: 50%;
+    z-index: 0;
 }
 
 .area-step {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-light);
+    /* Premium Frosted Glass */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    /* Almost imperceptible border */
     border-radius: var(--radius-md);
     padding: 2.5rem 2rem;
     text-align: center;
     transition: all var(--transition-normal);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    /* Soft shadow for light theme */
+    position: relative;
+    z-index: 1;
+    /* Sit above the connection line */
+
+    /* Deep, soft elevation shadow */
+    box-shadow: 0 20px 40px rgba(26, 35, 126, 0.04),
+        0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Staggered elevation to make them float at different heights */
+.area-step:nth-child(even) {
+    transform: translateY(20px);
 }
 
 .area-step:hover {
-    background: #ffffff;
-    border-color: var(--accent-gold);
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(26, 35, 126, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(206, 158, 88, 0.3);
+    transform: translateY(-12px);
+    /* Lift even further on hover */
+    box-shadow: 0 30px 60px rgba(26, 35, 126, 0.08);
+    /* Stronger shadow on hover */
+}
+
+/* Correct staggered hover state */
+.area-step:nth-child(even):hover {
+    transform: translateY(8px);
 }
 
 .step-letter {
     font-family: var(--font-heading);
-    font-size: 4rem;
+    font-size: 5rem;
+    /* Increased size for anchor focus */
     font-weight: 700;
-    color: var(--accent-gold);
     line-height: 1;
     margin-bottom: 1rem;
-    opacity: 0.8;
+
+    /* Gradient from Gold to Bronze */
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-bronze) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    display: inline-block;
+    /* Required for background-clip: text */
+    filter: drop-shadow(0 4px 6px rgba(166, 137, 17, 0.2));
+    /* Text shadow trick */
 }
 
 .area-step h4 {
