@@ -295,8 +295,8 @@ ul {
     /* Remover align-items: center para evitar clipping top */
     position: relative;
     overflow: hidden;
-    /* Clean Studio Photographic Background */
-    background: radial-gradient(circle at center, #FFFFFF 0%, #F0F2F5 100%);
+    /* Clean Editorial Studio Light */
+    background: radial-gradient(circle at top right, #FFFFFF 0%, #F0F0F0 100%);
     padding-top: 140px;
     /* Add space for navbar safely */
     padding-bottom: 20px;
@@ -328,8 +328,9 @@ ul {
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 55% 45%;
+    /* Break 50/50 division */
+    gap: 2rem;
     align-items: center;
     position: relative;
     z-index: 3;
@@ -339,30 +340,39 @@ ul {
 }
 
 .hero-content {
-    max-width: 650px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index: 4;
+    /* Stay above the image */
+    margin-right: -40px;
+    /* Slight overlap with image */
 }
 
 .hero-subtitle {
     font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--accent-bronze);
-    /* Deep bronze for eyebrow copy */
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 1.5rem;
 }
 
 .hero-title {
+    font-family: var(--font-heading);
     font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    /* Lighter weight for contrast */
     line-height: 1.1;
     margin-bottom: 1.5rem;
 }
 
 .hero-title span {
+    font-weight: 800;
+    /* Stronger weight for emphasis */
     font-style: italic;
     background: linear-gradient(135deg, var(--accent-bronze) 0%, var(--accent-gold) 100%);
     -webkit-background-clip: text;
@@ -385,10 +395,13 @@ ul {
 /* Hero Portrait Styles */
 .hero-portrait {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    /* Push to the right to handle the text overlap cleanly */
     align-items: center;
     height: 100%;
     position: relative;
+    z-index: 3;
+    /* Below the text content */
 }
 
 .portrait-wrapper {
@@ -413,9 +426,8 @@ ul {
     object-position: center center;
     display: block;
     border-radius: 12px;
-    /* Photographic Studio Blend Effect */
-    mask-image: radial-gradient(circle at center 30%, black 40%, transparent 100%);
-    -webkit-mask-image: radial-gradient(circle at center 30%, black 40%, transparent 100%);
+    /* Very subtle sophisticated drop shadow for editorial depth */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 50px 100px -20px;
 }
 
 
