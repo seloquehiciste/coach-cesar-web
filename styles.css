@@ -295,25 +295,16 @@ ul {
     /* Remover align-items: center para evitar clipping top */
     position: relative;
     overflow: hidden;
-    /* Soft Light Background */
-    background: var(--bg-main);
+    /* Clean Studio Photographic Background */
+    background: radial-gradient(circle at center, #FFFFFF 0%, #F0F2F5 100%);
     padding-top: 140px;
     /* Add space for navbar safely */
     padding-bottom: 20px;
 }
 
-/* Technological abstract patterns (ultra-low opacity) */
+/* Clean up hero abstractions for pure studio look */
 .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* Abstract grid-like matrix texture - Ultra-light for pearl background */
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: 1;
-    pointer-events: none;
+    display: none;
 }
 
 /* Subtle gold background accent glow */
@@ -332,12 +323,7 @@ ul {
 }
 
 .hero-overlay {
-    position: absolute;
-    inset: 0;
-    /* Soft geometric abstract pattern for an 'High Performance' texture */
-    background: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="%23ce9e58" fill-opacity="0.03" fill-rule="evenodd"><path d="M0 40L40 0H20L0 20M40 40V20L20 40"/></g></svg>');
-    z-index: 2;
-    pointer-events: none;
+    display: none;
 }
 
 .hero-container {
