@@ -149,15 +149,14 @@ ul {
 }
 
 .btn-primary {
-    background-color: var(--accent-gold);
-    color: #ffffff;
-    /* White text on gold button for better contrast */
-    border: 2px solid var(--accent-gold);
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--text-primary);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-gold-hover);
-    border-color: var(--accent-gold-hover);
+    background-color: var(--accent-gold-light);
+    border-color: var(--accent-gold);
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(206, 158, 88, 0.2);
 }
