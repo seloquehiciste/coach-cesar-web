@@ -969,6 +969,120 @@ footer {
 }
 
 /* =========================================
+   CALENDAR MODAL
+   ========================================= */
+.calendar-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(26, 35, 126, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.calendar-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.calendar-modal-content {
+    background-color: var(--bg-main);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--border-gold);
+    width: 95%;
+    max-width: 1000px;
+    height: 90vh;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 25px 50px -12px rgba(26, 35, 126, 0.25);
+    position: relative;
+    transform: translateY(50px) scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.calendar-modal.active .calendar-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.calendar-header {
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--bg-secondary);
+}
+
+.calendar-header h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+.calendar-header p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    z-index: 10;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.close-modal:hover {
+    background-color: rgba(26, 35, 126, 0.05);
+    color: var(--accent-gold);
+    transform: rotate(90deg);
+}
+
+.close-modal svg {
+    width: 24px;
+    height: 24px;
+}
+
+.calendar-container {
+    flex: 1;
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* =========================================
    RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 992px) {
@@ -1055,5 +1169,7 @@ footer {
     .footer-social {
         justify-content: center;
     }
-}/ *   C a c h e   b u s t e r   1 7 7 2 0 3 6 8 7 0 , 2 7 9 7   * /  
- 
+}
+
+/ *   C a c h e   b u s t e r   1 7 7 2 0 3 6 8 7 0 ,
+ 2 7 9 7   * /     

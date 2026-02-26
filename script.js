@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
-            
+
             btn.textContent = 'Enviando...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.backgroundColor = '#10b981'; // Green success
                 btn.style.borderColor = '#10b981';
                 btn.style.color = '#fff';
-                
+
                 contactForm.reset();
 
                 setTimeout(() => {
@@ -101,6 +101,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.color = '';
                 }, 3000);
             }, 1500);
+        });
+    }
+
+    // 5. Calendar Modal Logic
+    const calendarModal = document.getElementById('calendar-modal');
+    const openCalendarBtns = document.querySelectorAll('.open-calendar-btn');
+    const closeCalendarBtn = document.getElementById('close-modal');
+
+    if (calendarModal && closeCalendarBtn) {
+        openCalendarBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                calendarModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevenir scroll del body mientras el modal está abierto
+            });
+        });
+
+        const closeModal = () => {
+            calendarModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restaurar scroll
+        };
+
+        closeCalendarBtn.addEventListener('click', closeModal);
+
+        // Cerrar al hacer click fuera del contenido del modal
+        calendarModal.addEventListener('click', (e) => {
+            if (e.target === calendarModal) {
+                closeModal();
+            }
+        });
+
+        // Cerrar con la tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && calendarModal.classList.contains('active')) {
+                closeModal();
+            }
         });
     }
 });
