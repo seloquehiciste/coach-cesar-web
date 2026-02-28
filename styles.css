@@ -816,7 +816,7 @@ ul {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     position: relative;
     z-index: 2;
@@ -1159,7 +1159,9 @@ footer {
    RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 992px) {
-    .area-grid {
+
+    .area-grid,
+    .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1229,7 +1231,8 @@ footer {
         flex-direction: column;
     }
 
-    .area-grid {
+    .area-grid,
+    .benefits-grid {
         grid-template-columns: 1fr;
     }
 
